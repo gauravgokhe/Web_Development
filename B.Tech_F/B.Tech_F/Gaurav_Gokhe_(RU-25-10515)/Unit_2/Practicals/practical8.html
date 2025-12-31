@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <title>CSS Selectors Example</title>
+
+  <style>
+    /* Universal Selector */
+    * {
+      font-family: Arial, sans-serif;
+      margin: 
+      5px;
+      padding: 5px;
+    }
+    /* Group Selector */
+    h1, h2 {
+      text-align: center;
+      color: darkblue;
+    }
+    /* Class Selector */
+    .highlight {
+      background-color: #ffff99;
+      color: green;
+      padding: 5px;
+    }
+    /* ID Selector */
+    #unique {
+      color: white;
+      background-color: #007acc;
+      text-align: center;
+      padding: 8px;
+      border-radius: 5px;
+    }
+    /* Descendant Selector */
+    section p {
+      color: #333;
+      border-left: 3px solid orange;
+      padding-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Different CSS Selectors</h1>
+  <h2>Example Page</h2>
+
+  <p class="highlight">This paragraph uses a <b>class selector</b>.</p>
+
+  <p id="unique">This paragraph uses an <b>ID selector</b>.</p>
+
+  <section>
+    <h3>Descendant Selector Example</h3>
+    <p>This paragraph is inside a section — styled using a <b>descendant selector</b>.</p>
+  </section>
+
+  <p>This is a normal paragraph (affected by universal selector only).</p>
+</body>
+</html>

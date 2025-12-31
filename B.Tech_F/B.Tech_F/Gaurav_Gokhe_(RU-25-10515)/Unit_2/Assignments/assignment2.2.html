@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="assignment2.2.css">
+</head>
+<body>
+
+    <header class="header">My Responsive Website</header>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <h3>Sidebar Menu</h3>
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Services</li>
+                <li>Gallery</li>
+                <li>Contact</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Welcome to the Content Section</h2>
+            <p>This is the main content area of the webpage. The layout changes based on the screen size using media queries. Resize the browser window to see the responsive behavior.</p>
+
+            <h3>About Our Website</h3>
+            <p>
+                This website is built using modern CSS techniques including Flexbox, Float, and Media Queries. 
+                The sidebar remains on the left in desktop view, moves above the content in tablet view, 
+                and becomes full width in mobile view.
+            </p>
+
+            <h3>Float Example</h3>
+            <img src="floating-label.jpg" class="float-img" alt="Floating Image" width="500" height="400">
+            <p>
+                This image is floated to the left, which means text wraps around it.
+                Floats were commonly used for layouts before Flexbox and Grid, but now 
+                they are mainly used for wrapping content like this.
+                Notice how the image pushes the paragraph text to the right.
+            </p>
+
+            <div class="clear"></div>
+
+            <h3>Additional Information</h3>
+            <p>
+                Responsive design is an essential part of modern web development. It ensures that webpages look good 
+                on all screen sizes — from large desktops to smartphones. Media queries help developers modify 
+                layouts, text sizes, images, and more depending on the device width.
+            </p>
+        </main>
+
+    </div>
+
+</body>
+</html>

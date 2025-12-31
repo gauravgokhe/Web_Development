@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q15 - Easy DOM Manipulation</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        button { margin: 5px; padding: 8px 12px; }
+    </style>
+</head>
+<body>
+
+<h2 id="title">Q15 — DOM Manipulation (Simple)</h2>
+<p id="para">This is the original paragraph.</p>
+
+<button onclick="changeText()">Change Text</button>
+<button onclick="changeColor()">Change Color</button>
+<button onclick="resetAll()">Reset</button>
+
+<script>
+function changeText() {
+    document.getElementById("para").textContent = "Text changed using JavaScript!";
+}
+
+function changeColor() {
+    document.getElementById("para").style.color = "blue";
+}
+
+function resetAll() {
+    document.getElementById("para").textContent = "This is the original paragraph.";
+    document.getElementById("para").style.color = "black";
+}
+</script>
+
+</body>
+</html>
