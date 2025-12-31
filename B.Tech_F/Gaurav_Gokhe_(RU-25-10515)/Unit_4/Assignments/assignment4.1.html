@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Array Methods</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            max-width: 900px;
+            margin: auto;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 90%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .output {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Array Methods in JavaScript</h1>
+
+    <p>
+        Arrays in JavaScript are used to store multiple values in a single variable.
+        JavaScript provides built-in methods to add or remove elements from an array.
+        The methods <code>push()</code>, <code>pop()</code>, <code>shift()</code>, and
+        <code>unshift()</code> are commonly used for this purpose.
+    </p>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Operation</th>
+            <th>Position Affected</th>
+        </tr>
+
+        <tr>
+            <td>push()</td>
+            <td>Adds an element</td>
+            <td>End of array</td>
+        </tr>
+
+        <tr>
+            <td>pop()</td>
+            <td>Removes an element</td>
+            <td>End of array</td>
+        </tr>
+
+        <tr>
+            <td>unshift()</td>
+            <td>Adds an element</td>
+            <td>Beginning of array</td>
+        </tr>
+
+        <tr>
+            <td>shift()</td>
+            <td>Removes an element</td>
+            <td>Beginning of array</td>
+        </tr>
+    </table>
+
+    <!-- DEMO -->
+    <div class="box">
+        <h2>Array Demonstration</h2>
+
+        <p><b>Initial Array:</b></p>
+        <p id="arrayDisplay" class="output"></p>
+
+        <button onclick="doPush()">push()</button>
+        <button onclick="doPop()">pop()</button>
+        <button onclick="doUnshift()">unshift()</button>
+        <button onclick="doShift()">shift()</button>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let arr = ["Apple", "Banana", "Mango"];
+
+        function displayArray() {
+            document.getElementById("arrayDisplay").innerText =
+                "[" + arr.join(", ") + "]";
+        }
+
+        function doPush() {
+            arr.push("Orange");
+            displayArray();
+        }
+
+        function doPop() {
+            arr.pop();
+            displayArray();
+        }
+
+        function doUnshift() {
+            arr.unshift("Grapes");
+            displayArray();
+        }
+
+        function doShift() {
+            arr.shift();
+            displayArray();
+        }
+
+        displayArray();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises and Async/Await in JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            max-width: 900px;
+            margin: auto;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 90%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .output {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Promises and Async/Await in JavaScript</h1>
+
+    <p>
+        JavaScript is asynchronous in nature, which means some operations like fetching data
+        or waiting for a response take time. <b>Promises</b> and <b>async/await</b> are used
+        to handle such asynchronous operations in an easy and readable way.
+    </p>
+
+    <!-- PROMISE EXPLANATION TABLE -->
+    <table>
+        <tr>
+            <th>Concept</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Promise</td>
+            <td>An object that represents the future result of an asynchronous operation</td>
+        </tr>
+
+        <tr>
+            <td>Resolved</td>
+            <td>Promise completed successfully</td>
+        </tr>
+
+        <tr>
+            <td>Rejected</td>
+            <td>Promise failed with an error</td>
+        </tr>
+
+        <tr>
+            <td>async/await</td>
+            <td>Simpler syntax to handle promises like synchronous code</td>
+        </tr>
+    </table>
+
+    <!-- DEMO -->
+    <div class="box">
+        <h2>Promise vs Async/Await Demonstration</h2>
+
+        <button onclick="runPromise()">Run Promise</button>
+        <button onclick="runAsyncAwait()">Run Async/Await</button>
+
+        <p id="result" class="output"></p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Promise example
+        function getDataWithPromise() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Data received using Promise");
+                }, 2000);
+            });
+        }
+
+        function runPromise() {
+            document.getElementById("result").innerText = "Loading (Promise)...";
+
+            getDataWithPromise()
+                .then(data => {
+                    document.getElementById("result").innerText = data;
+                })
+                .catch(error => {
+                    document.getElementById("result").innerText = "Error occurred";
+                });
+        }
+
+        // Async/Await example
+        async function getDataWithAsyncAwait() {
+            let data = await getDataWithPromise();
+            return data;
+        }
+
+        async function runAsyncAwait() {
+            document.getElementById("result").innerText = "Loading (Async/Await)...";
+
+            try {
+                let result = await getDataWithAsyncAwait();
+                document.getElementById("result").innerText = result;
+            } catch (error) {
+                document.getElementById("result").innerText = "Error occurred";
+            }
+        }
+    </script>
+
+</body>
+</html>

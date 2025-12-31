@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Control Flow Statements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 90%;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Control Flow Statements in JavaScript</h1>
+
+    <p>
+        Control flow statements are used to control the order in which JavaScript code executes.
+        They help in decision making and repeating a block of code using loops.
+    </p>
+
+    <h2>Looping Statements</h2>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>for Loop</th>
+            <th>while Loop</th>
+            <th>do-while Loop</th>
+        </tr>
+
+        <tr>
+            <td>Condition Check</td>
+            <td>Before execution</td>
+            <td>Before execution</td>
+            <td>After execution</td>
+        </tr>
+
+        <tr>
+            <td>Minimum Execution</td>
+            <td>0 times</td>
+            <td>0 times</td>
+            <td>At least 1 time</td>
+        </tr>
+
+        <tr>
+            <td>Best Used When</td>
+            <td>Iterations are known</td>
+            <td>Iterations are unknown</td>
+            <td>Code must run once</td>
+        </tr>
+
+        <tr>
+            <td>Initialization</td>
+            <td>Inside loop</td>
+            <td>Outside loop</td>
+            <td>Outside loop</td>
+        </tr>
+    </table>
+
+    <!-- CODE EXAMPLES -->
+    <div class="box">
+        <h2>Loop Examples (Check Console)</h2>
+
+        <pre>
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+let j = 1;
+while (j <= 5) {
+    console.log(j);
+    j++;
+}
+
+let k = 1;
+do {
+    console.log(k);
+    k++;
+} while (k <= 5);
+        </pre>
+
+        <button onclick="runLoops()">Run Loop Examples</button>
+        <p>Open browser console to see the output.</p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function runLoops() {
+
+            console.log("FOR LOOP OUTPUT:");
+            for (let i = 1; i <= 5; i++) {
+                console.log(i);
+            }
+
+            console.log("WHILE LOOP OUTPUT:");
+            let j = 1;
+            while (j <= 5) {
+                console.log(j);
+                j++;
+            }
+
+            console.log("DO-WHILE LOOP OUTPUT:");
+            let k = 1;
+            do {
+                console.log(k);
+                k++;
+            } while (k <= 5);
+
+            alert("Loops executed! Check the console.");
+        }
+    </script>
+
+</body>
+</html>

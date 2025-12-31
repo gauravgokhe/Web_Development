@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Delegation and addEventListener</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            max-width: 900px;
+            margin: auto;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 90%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #ecf0f1;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #dcdde1;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Event Delegation and addEventListener</h1>
+
+    <p>
+        In JavaScript, events such as clicks, key presses, or mouse movements are handled
+        using event listeners. The method <b>addEventListener()</b> is used to attach an
+        event handler to an element. <b>Event Delegation</b> is a technique where a single
+        event listener is added to a parent element instead of multiple child elements.
+    </p>
+
+    <!-- addEventListener TABLE -->
+    <table>
+        <tr>
+            <th>Concept</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>addEventListener()</td>
+            <td>Attaches an event handler to an element without overwriting existing events</td>
+        </tr>
+
+        <tr>
+            <td>Event Delegation</td>
+            <td>Handling events at the parent level using event bubbling</td>
+        </tr>
+
+        <tr>
+            <td>event.target</td>
+            <td>Identifies the actual element that triggered the event</td>
+        </tr>
+    </table>
+
+    <!-- DEMO -->
+    <div class="box">
+        <h2>Event Delegation Example</h2>
+
+        <p>
+            Click on any list item. Only <b>one event listener</b> is added to the parent list.
+        </p>
+
+        <ul id="itemList">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+
+        <button onclick="addItem()">Add New Item</button>
+
+        <p id="result" class="output"></p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Event Delegation using addEventListener
+        document.getElementById("itemList").addEventListener("click", function (event) {
+
+            // Check if clicked element is a list item
+            if (event.target.tagName === "LI") {
+                document.getElementById("result").innerText =
+                    "You clicked: " + event.target.innerText;
+            }
+        });
+
+        // Add new list item dynamically
+        function addItem() {
+            let li = document.createElement("li");
+            li.innerText = "New Item";
+            document.getElementById("itemList").appendChild(li);
+        }
+    </script>
+
+</body>
+</html>

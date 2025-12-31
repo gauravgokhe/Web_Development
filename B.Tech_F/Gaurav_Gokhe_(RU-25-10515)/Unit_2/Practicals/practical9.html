@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <title>Responsive Short</title>
+  <style>
+    body{font-family:Arial, sans-serif;margin:0;padding:16px;background:#f8f8f8;color:#111}
+    header{background:#0078d7;color:#fff;padding:12px;text-align:center;border-radius:6px}
+    main{background:#fff;margin:16px 0;padding:12px;border-radius:6px}
+    footer{background-color: #0078d7;}
+    @media (min-width:600px){
+      body{background:#dff0d8}       /* light green */
+      header{background:#28a745}
+    }
+
+    @media (min-width:700px){
+      body{background:#cfe8ff}       /* light blue */
+      main{display:flex;gap:16px}
+      main > section{flex:1}
+    }
+    footer {
+      text-align: center; background-color: #333;
+      color: white;  padding: 10px;
+      margin-top: 15px; border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header><h1 style="margin:0;font-size:1.25rem">The Magic Of Media Queries</h1></header>
+
+  <main>
+    <section>
+      <h2 style="margin-top:0;font-size:1rem">About</h2>
+      <p>Resize window: background color changes at 600px and 900px. Layout becomes two-column on wide screens.</p>
+    </section>
+
+    <section>
+      <h2 style="margin-top:0;font-size:1rem">Notes</h2>
+      <p>Mobile-first, simple media queries, flexible layout.</p>
+    </section>
+  </main>
+<header>
+    <h1>Responsive Web Page</h1>
+    <p>Resize the window to see color changes</p>
+  </header>
+
+  <section>
+    <article>
+      <h2>What is Responsive Design?</h2>
+      <p>Responsive design makes web pages look good on all devices — mobiles, tablets, and desktops.</p>
+    </article>
+
+    <article>
+      <h2>How Media Queries Help</h2>
+      <p>Media queries adjust colors, layout, and design based on screen width for better viewing experience.</p>
+    </article>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Web Development Lab | Designed by Gaurav Gokhe</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var vs let vs const</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #444;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .output {
+            width: 90%;
+            margin: auto;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Difference between var, let, and const</h1>
+
+    <p>
+        In JavaScript, <code>var</code>, <code>let</code>, and <code>const</code> are used to declare variables.
+        They differ mainly in terms of <b>scope</b>, <b>hoisting</b>, and <b>reassignment</b>.
+    </p>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>var</th>
+            <th>let</th>
+            <th>const</th>
+        </tr>
+
+        <tr>
+            <td>Scope</td>
+            <td>Function Scope</td>
+            <td>Block Scope</td>
+            <td>Block Scope</td>
+        </tr>
+
+        <tr>
+            <td>Hoisting</td>
+            <td>Hoisted and initialized</td>
+            <td>Hoisted but not initialized</td>
+            <td>Hoisted but not initialized</td>
+        </tr>
+
+        <tr>
+            <td>Use before declaration</td>
+            <td>Allowed (undefined)</td>
+            <td>Not allowed</td>
+            <td>Not allowed</td>
+        </tr>
+
+        <tr>
+            <td>Redeclaration</td>
+            <td>Allowed</td>
+            <td>Not allowed</td>
+            <td>Not allowed</td>
+        </tr>
+
+        <tr>
+            <td>Reassignment</td>
+            <td>Allowed</td>
+            <td>Allowed</td>
+            <td>Not allowed</td>
+        </tr>
+    </table>
+
+    <!-- JS OUTPUT -->
+    <div class="output">
+        <h3>JavaScript Example Output (Check Console)</h3>
+        <button onclick="showExamples()">Run JavaScript Examples</button>
+        <p>Open browser console (Right click → Inspect → Console)</p>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function showExamples() {
+
+            // var example
+            var a = 10;
+            var a = 20; // redeclaration allowed
+            console.log("var value:", a);
+
+            // let example
+            let b = 30;
+            b = 40; // reassignment allowed
+            console.log("let value:", b);
+
+            // const example
+            const c = 50;
+            console.log("const value:", c);
+
+            alert("Examples executed! Check the console.");
+        }
+    </script>
+
+</body>
+</html>

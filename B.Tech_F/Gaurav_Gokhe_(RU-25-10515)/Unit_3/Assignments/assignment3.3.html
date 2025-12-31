@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Object Model (DOM)</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            max-width: 900px;
+            margin: auto;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .box {
+            width: 90%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .demo {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Document Object Model (DOM)</h1>
+
+    <p>
+        The <b>Document Object Model (DOM)</b> is a programming interface that represents an HTML
+        document as a tree of objects. JavaScript uses the DOM to access, change, add, or remove
+        elements and content from a webpage dynamically.
+    </p>
+
+    <h2>Selecting Elements in DOM</h2>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>getElementById()</td>
+            <td>Selects an element using its ID</td>
+            <td><code>document.getElementById("demo")</code></td>
+        </tr>
+
+        <tr>
+            <td>querySelector()</td>
+            <td>Selects the first matching element</td>
+            <td><code>document.querySelector(".box")</code></td>
+        </tr>
+    </table>
+
+    <h2>innerText vs innerHTML</h2>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>innerText</th>
+            <th>innerHTML</th>
+        </tr>
+
+        <tr>
+            <td>Content Type</td>
+            <td>Text only</td>
+            <td>Text + HTML tags</td>
+        </tr>
+
+        <tr>
+            <td>HTML Parsing</td>
+            <td>Does not parse HTML</td>
+            <td>Parses HTML tags</td>
+        </tr>
+
+        <tr>
+            <td>Use Case</td>
+            <td>Plain text update</td>
+            <td>Dynamic HTML content</td>
+        </tr>
+    </table>
+
+    <!-- DEMO SECTION -->
+    <div class="box">
+        <h2>DOM Manipulation Example</h2>
+
+        <p id="textDemo" class="demo">This is original text.</p>
+
+        <button onclick="changeText()">Change using innerText</button>
+        <button onclick="changeHTML()">Change using innerHTML</button>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function changeText() {
+            document.getElementById("textDemo").innerText =
+                "Text changed using innerText (no HTML formatting).";
+        }
+
+        function changeHTML() {
+            document.getElementById("textDemo").innerHTML =
+                "Text changed using <b>innerHTML</b> with <i>HTML formatting</i>.";
+        }
+    </script>
+
+</body>
+</html>

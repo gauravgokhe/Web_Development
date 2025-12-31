@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form Validation</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input { margin: 8px 0; padding: 6px; display: block; width: 250px; }
+        button { padding: 8px 12px; }
+    </style>
+</head>
+<body>
+
+<h2>Form Validation</h2>
+
+<form onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Enter name">
+
+    <label>Email:</label>
+    <input type="text" id="email" placeholder="Enter email">
+
+    <label>Age:</label>
+    <input type="number" id="age" placeholder="Enter age">
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let age = Number(document.getElementById("age").value);
+
+    // Name validation
+    if (name.length < 3) {
+        alert("Name must be at least 3 characters long.");
+        return false; 
+    }
+
+    // Email validation
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email.");
+        return false;
+    }
+
+    // Age validation
+    if (age < 18 || age > 60) {
+        alert("Age must be between 18 and 60.");
+        return false;
+    }
+
+    alert("Form submitted successfully!\nName: " + name + "\nEmail: " + email + "\nAge: " + age);
+    return true; 
+}
+</script>
+
+</body>
+</html>

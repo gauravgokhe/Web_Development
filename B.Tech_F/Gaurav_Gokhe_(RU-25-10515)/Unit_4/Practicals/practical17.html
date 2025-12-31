@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q17 - Events (Simple)</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        #area { width: 250px; height: 120px; border: 2px dashed #333;
+                display: flex; justify-content: center; align-items: center; }
+    </style>
+</head>
+<body>
+
+<h2>Q17 — Event Listeners (Simple)</h2>
+
+<button onclick="enableEvents()">Enable Events</button>
+<button onclick="disableEvents()">Disable Events</button>
+
+<div id="area">Move mouse here</div>
+
+<p id="out">Events Disabled</p>
+
+<script>
+let enabled = false;
+
+function mouseMove(e) {
+    document.getElementById("area").textContent =
+        "X:" + e.offsetX + "  Y:" + e.offsetY;
+}
+
+function enableEvents() {
+    if (!enabled) {
+        document.getElementById("area").addEventListener("mousemove", mouseMove);
+        document.getElementById("out").textContent = "Events Enabled";
+        enabled = true;
+    }
+}
+
+function disableEvents() {
+    document.getElementById("area").removeEventListener("mousemove", mouseMove);
+    document.getElementById("area").textContent = "Move mouse here";
+    document.getElementById("out").textContent = "Events Disabled";
+    enabled = false;
+}
+</script>
+
+</body>
+</html>
++

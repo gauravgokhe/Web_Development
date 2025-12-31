@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Create & Remove Elements</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        ul { margin-top: 10px; }
+        li { padding: 5px; }
+        button { margin-top: 6px; }
+    </style>
+</head>
+<body>
+
+<h2>Create & Remove Elements</h2>
+
+<input type="text" id="item" placeholder="Enter item">
+<button onclick="addItem()">Add Item</button>
+<button onclick="clearList()">Clear All</button>
+
+<ul id="list">
+    <li>Sample item</li>
+</ul>
+
+<script>
+function addItem() {
+    let text = document.getElementById("item").value.trim();
+    if (text === "") {
+        alert("Enter something!");
+        return;
+    }
+    let li = document.createElement("li");
+    li.textContent = text;
+    document.getElementById("list").appendChild(li);
+    document.getElementById("item").value = "";
+}
+
+function clearList() {
+    document.getElementById("list").innerHTML = "";
+}
+</script>
+
+</body>
+</html>
